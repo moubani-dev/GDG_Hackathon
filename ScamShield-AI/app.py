@@ -635,6 +635,94 @@ st.markdown("""
     margin-top:55px;
     font-size:13px;
 }
+            
+            /* ===== SIDEBAR ===== */
+
+section[data-testid="stSidebar"] {
+    background:
+        linear-gradient(
+            180deg,
+            #070d1c 0%,
+            #090b20 55%,
+            #0b1024 100%
+        ) !important;
+
+    border-right:1px solid rgba(129,140,248,.15);
+}
+
+section[data-testid="stSidebar"] > div {
+    padding:25px 18px;
+}
+
+.sidebar-brand {
+    font-size:21px;
+    font-weight:900;
+    color:#f8fafc;
+    line-height:1.2;
+}
+
+.sidebar-brand span {
+    background:linear-gradient(
+        90deg,
+        #38bdf8,
+        #818cf8,
+        #c084fc
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.sidebar-subtitle {
+    font-size:11px;
+    color:#64748b;
+    margin-top:6px;
+}
+
+.side-item {
+    padding:12px 13px;
+    margin:6px 0;
+    border-radius:11px;
+    color:#94a3b8;
+    font-size:14px;
+    transition:.25s ease;
+}
+
+.side-item:hover {
+    background:rgba(99,102,241,.12);
+    color:#f8fafc;
+    transform:translateX(3px);
+}
+
+.side-item.active {
+    background:rgba(99,102,241,.18);
+    color:#ffffff;
+    border-left:3px solid #818cf8;
+}
+
+.system-status {
+    padding:16px;
+    border-radius:13px;
+    background:rgba(34,197,94,.10);
+    border:1px solid rgba(74,222,128,.15);
+    color:#86efac;
+    font-size:12px;
+    font-weight:800;
+}
+
+.system-status small {
+    display:block;
+    margin-top:7px;
+    color:#64748b;
+    font-weight:500;
+}
+
+.sidebar-footer {
+    color:#475569;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:18px;
+}
 
 /* ===== MOBILE ===== */
 
@@ -693,6 +781,64 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
+
+# -----------------------------
+# SIDEBAR
+# -----------------------------
+
+with st.sidebar:
+
+    st.markdown("""
+<div class="sidebar-brand">
+    🛡️ SCAMSHIELD
+</div>
+
+<div class="sidebar-subtitle">
+    AI SAFETY SYSTEM
+</div>
+""", unsafe_allow_html=True)¸
+
+    st.markdown("---")
+
+    st.markdown("""
+    <div class="side-item active">
+        🏠 &nbsp; Home
+    </div>
+
+    <div class="side-item">
+        🔍 &nbsp; Scam Scanner
+    </div>
+
+    <div class="side-item">
+        🚨 &nbsp; Emergency Mode
+    </div>
+
+    <div class="side-item">
+        📄 &nbsp; Incident Report
+    </div>
+
+    <div class="side-item">
+        💡 &nbsp; How It Works
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="system-status">
+        ● AI SYSTEM READY
+        <small>Powered by Gemini AI</small>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="sidebar-footer">
+        Detect suspicious patterns.<br>
+        Understand the trap.<br>
+        Take safer action.
+    </div>
+    """, unsafe_allow_html=True)
+
 
 
 # -----------------------------
@@ -794,7 +940,8 @@ st.markdown("""
 
 st.markdown("""
 <div class="input-section-subtitle">
-    Paste an SMS, WhatsApp message, email or UPI request below.
+    Paste an SMS, WhatsApp message, email or UPI request.
+    We'll check the signals before you act.
 </div>
 """, unsafe_allow_html=True)
 
@@ -906,9 +1053,18 @@ if "result" in st.session_state:
         {category}
     </div>
 
+    <div style="
+        font-size:14px;
+        color:#94a3b8;
+        margin-top:8px;
+    ">
+        AI assessment based on message patterns,
+        evidence and manipulation signals.
+    </div>
+
 </div>
 """)
-
+    
 
     # -------------------------
     # TWO COLUMNS
