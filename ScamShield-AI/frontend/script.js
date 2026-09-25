@@ -116,7 +116,25 @@ function displayResults(result) {
     const riskMeter = document.getElementById("riskMeter");
 
 if (riskMeter) {
+
     riskMeter.style.width = `${score}%`;
+
+    if (level === "LOW") {
+        riskMeter.style.background = "#22c55e";
+        riskMeter.style.boxShadow = "0 0 18px rgba(34, 197, 94, 0.45)";
+
+    } else if (level === "MEDIUM") {
+        riskMeter.style.background = "#eab308";
+        riskMeter.style.boxShadow = "0 0 18px rgba(234, 179, 8, 0.45)";
+
+    } else if (level === "HIGH") {
+        riskMeter.style.background = "#f97316";
+        riskMeter.style.boxShadow = "0 0 18px rgba(249, 115, 22, 0.45)";
+
+    } else if (level === "CRITICAL") {
+        riskMeter.style.background = "#ef4444";
+        riskMeter.style.boxShadow = "0 0 18px rgba(239, 68, 68, 0.55)";
+    }
 }
 
 
