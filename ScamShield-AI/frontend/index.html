@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            🛡️ <span>ScamShield</span> AI
+        </div>
+
+        <div class="sidebar-subtitle">
+            AI SAFETY SYSTEM
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <nav>
+            <a href="#home" class="nav-item active">
+                🏠
+                <span>Home</span>
+            </a>
+
+            <a href="#scanner" class="nav-item">
+                🔍
+                <span>Scam Scanner</span>
+            </a>
+
+            <a href="#emergency" class="nav-item">
+                🚨
+                <span>Emergency Mode</span>
+            </a>
+
+            <a href="#report" class="nav-item">
+                📄
+                <span>Incident Report</span>
+            </a>
+
+            <a href="#how-it-works" class="nav-item">
+                💡
+                <span>How It Works</span>
+            </a>
+        </nav>
+
+        <div class="system-status">
+            <div>● AI SYSTEM READY</div>
+            <small>Powered by Gemini AI</small>
+        </div>
+
+        <div class="sidebar-footer">
+            Detect suspicious patterns.<br>
+            Understand the trap.<br>
+            Take safer action.
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- BRAND -->
+        <header class="top-header">
+
+            <div class="logo">
+                🛡️ Scam<span>Shield</span> AI
+            </div>
+
+            <div class="tagline">
+                Detect. Understand. Protect.
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    ✨ AI-POWERED SCAM DETECTION
+                </div>
+
+                <h1>
+                    Before you click.<br>
+                    <span>Before you pay.</span>
+                </h1>
+
+                <p>
+                    Check suspicious messages, emails, WhatsApp texts
+                    and UPI requests before taking action.
+                </p>
+
+                <div class="feature-row">
+
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <strong>Detect</strong>
+                        <small>Find scam patterns</small>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🧠</div>
+                        <strong>Understand</strong>
+                        <small>Know why it's risky</small>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <strong>Protect</strong>
+                        <small>Take safer action</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Floating scam messages -->
+            <div class="signal signal-one">
+                🎁 You won a prize!
+            </div>
+
+            <div class="signal signal-two">
+                🚨 URGENT! Account blocked
+            </div>
+
+            <div class="signal signal-three">
+                📩 KYC update required
+            </div>
+
+            <img
+    src="scam_girl.png"
+    alt="ScamShield AI Cyber Safety Assistant"
+    class="hero-girl"
+>
+
+        </section>
+
+
+        <!-- SCANNER -->
+        <section class="scanner-section" id="scanner">
+
+            <div class="section-title">
+                🔎 Scam Scanner
+            </div>
+
+            <div class="section-subtitle">
+                Paste an SMS, WhatsApp message, email or UPI request.
+                We'll check the signals before you act.
+            </div>
+
+
+            <div class="scanner-card">
+
+                <div class="screenshot-upload">
+
+    <label for="screenshot">
+        📸 Upload a suspicious screenshot
+    </label>
+
+    <input
+        type="file"
+        id="screenshot"
+        accept="image/png, image/jpeg, image/jpg"
+    >
+
+    <small>
+        Upload an SMS, WhatsApp, email or UPI screenshot.
+    </small>
+
+</div>
+
+                <label for="message">
+                    Suspicious message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Example:
+
+URGENT! Your bank account will be blocked today.
+Complete your KYC immediately using this link."
+                ></textarea>
+
+
+                <div class="scanner-controls">
+
+                    <div class="language-control">
+
+                        <label for="language">
+                            Response language
+                        </label>
+
+                        <select id="language">
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Bengali">Bengali</option>
+                        </select>
+
+                    </div>
+
+
+                    <button id="scanButton">
+                        🔍 Scan for Scam Risk →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section id="results" class="results-section hidden">
+
+            <div class="risk-card">
+
+    <div class="risk-top">
+        <div>
+            <div class="risk-label" id="riskLabel">
+                🚨 CRITICAL RISK
+            </div>
+
+            <div class="risk-category" id="riskCategory">
+                Bank Phishing Scam
+            </div>
+        </div>
+
+        <div class="risk-score" id="riskScore">
+            95<span>/100</span>
+        </div>
+    </div>
+
+    <div class="risk-meter">
+        <div class="risk-meter-fill" id="riskMeter"></div>
+    </div>
+
+    <div class="risk-description">
+        AI assessment based on message patterns,
+        evidence and manipulation signals.
+    </div>
+
+</div>
+
+
+            <div class="result-grid">
+
+                <div class="result-card">
+
+                    <h3>⚠️ Suspicious Signals</h3>
+
+                    <div id="signalsList"></div>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <h3>🔎 Evidence</h3>
+
+                    <div id="evidenceList"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLAIN THE TRAP -->
+            <div class="trap-section">
+
+                <h3>🧠 Explain the Trap</h3>
+
+                <div class="trap-flow">
+
+                    <div>😨 Fear</div>
+                    <span>→</span>
+                    <div>⏰ Urgency</div>
+                    <span>→</span>
+                    <div>🏦 Authority</div>
+                    <span>→</span>
+                    <div>👆 Action</div>
+                    <span>→</span>
+                    <div>💸 Potential Loss</div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MANIPULATION -->
+            <div class="result-card full-width">
+
+                <h3>🎭 Detected Manipulation Tactics</h3>
+
+                <div id="tacticsList"></div>
+
+            </div>
+
+
+            <!-- SAFE ACTIONS -->
+            <div class="result-card full-width">
+
+                <h3>🛡️ Safe Next Steps</h3>
+
+                <div id="actionsList"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EMERGENCY -->
+        <section id="emergency" class="emergency-section">
+
+    <div class="emergency-icon">
+        🚨
+    </div>
+
+    <div class="emergency-content">
+        <h3>Emergency Mode</h3>
+
+        <p>
+            Already clicked a suspicious link, shared information,
+            or transferred money?
+        </p>
+
+        <button id="emergencyButton" class="emergency-button">
+            🚨 Get Immediate Safety Steps
+        </button>
+    </div>
+
+</section>
+
+
+<!-- EMERGENCY PANEL -->
+<section id="emergencyPanel" class="emergency-panel hidden">
+
+    <div class="emergency-panel-header">
+        <div>
+            <span class="emergency-badge">🚨 EMERGENCY RESPONSE</span>
+            <h2>What happened?</h2>
+            <p>
+                Choose what happened and ScamShield will show the immediate
+                safety steps you can take.
+            </p>
+        </div>
+
+        <button id="closeEmergency" class="close-emergency">
+            ✕
+        </button>
+    </div>
+
+
+    <div class="emergency-options">
+
+        <button class="emergency-option" data-action="link">
+            <span>🔗</span>
+            <strong>I clicked a suspicious link</strong>
+            <small>Secure your account and stop further interaction.</small>
+        </button>
+
+
+        <button class="emergency-option" data-action="information">
+            <span>🔐</span>
+            <strong>I shared OTP or information</strong>
+            <small>Take steps to protect your banking or personal information.</small>
+        </button>
+
+
+        <button class="emergency-option" data-action="money">
+            <span>💸</span>
+            <strong>I transferred money</strong>
+            <small>Take immediate steps to report and secure the transaction.</small>
+        </button>
+
+    </div>
+
+
+    <div id="emergencyResponse" class="emergency-response hidden">
+    </div>
+
+</section>
+
+<!-- INCIDENT REPORT -->
+<section id="report" class="info-section">
+
+    <div class="section-title">
+        📄 Incident Report
+    </div>
+
+    <div class="section-subtitle">
+        Keep a record of suspicious activity for future reference or reporting.
+    </div>
+
+    <div class="info-card">
+
+        <h3>🛡️ Scam Incident Record</h3>
+
+        <p>
+            ScamShield can help you document the suspicious message,
+            detected risk and recommended safety actions.
+        </p>
+
+        <div class="report-placeholder">
+            <strong>Current status:</strong>
+            Use the Scam Scanner above to analyze a suspicious message
+            before creating an incident record.
+        </div>
+
+        <button
+            class="info-button"
+            onclick="document.getElementById('scanner').scrollIntoView({behavior:'smooth'})">
+            🔍 Analyze a Message First
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="info-section">
+
+    <div class="section-title">
+        💡 How ScamShield AI Works
+    </div>
+
+    <div class="section-subtitle">
+        Three simple steps to help you stay safer online.
+    </div>
+
+    <div class="how-it-works-grid">
+
+        <div class="info-card">
+            <div class="info-icon">🔍</div>
+            <h3>Detect</h3>
+            <p>
+                ScamShield analyzes suspicious messages and looks
+                for common scam patterns and warning signals.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">🧠</div>
+            <h3>Understand</h3>
+            <p>
+                The AI explains the evidence and manipulation tactics
+                that make the message suspicious.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">🛡️</div>
+            <h3>Protect</h3>
+            <p>
+                ScamShield provides safer next steps so users know
+                what to do before taking further action.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            ScamShield AI • AI-powered digital safety assistant<br>
+
+            Detect suspicious patterns.
+            Understand the trap.
+            Take safer action.
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
