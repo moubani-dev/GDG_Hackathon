@@ -1,4 +1,4 @@
-<img width="1434" height="812" alt="image" src="https://github.com/user-attachments/assets/a7b86ac5-0b46-486a-b831-865b4b1675bc" /><img width="1434" height="812" alt="image" src="https://github.com/user-attachments/assets/8b0069e3-129a-4a24-b5d9-a9bbae3dadd9" /># 🛡️ ScamShield AI
+ # 🛡️ ScamShield AI
 
 ### AI-Powered Scam Detection & Digital Safety Assistant
 
