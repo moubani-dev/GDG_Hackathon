@@ -1,4 +1,4 @@
-# 🛡️ ScamShield AI
+<img width="1434" height="812" alt="image" src="https://github.com/user-attachments/assets/a7b86ac5-0b46-486a-b831-865b4b1675bc" /><img width="1434" height="812" alt="image" src="https://github.com/user-attachments/assets/8b0069e3-129a-4a24-b5d9-a9bbae3dadd9" /># 🛡️ ScamShield AI
 
 ### AI-Powered Scam Detection & Digital Safety Assistant
 
@@ -25,6 +25,10 @@ Messages such as:
 may look legitimate at first glance.
 
 ScamShield AI helps users pause, analyze the message, understand the manipulation tactics being used, and make a safer decision.
+
+
+
+
 
 ---
 
@@ -350,6 +354,11 @@ Potential future improvements include:
 - Integration with official cybercrime reporting systems
 
 ---
+
+🖥️ ScamShield AI Dashboard
+
+<img width="1440" height="812" alt="image" src="https://github.com/user-attachments/assets/be452310-1c1b-4b4b-80f5-00b646eae411" />
+
 
 ## 🏆 Project Goal
 
