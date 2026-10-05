@@ -43,12 +43,12 @@ if (screenshot) {
     formData.append("language", language);
 
     response = await fetch(
-        "http://127.0.0.1:8000/analyze-screenshot",
-        {
-            method: "POST",
-            body: formData
-        }
-    );
+    "https://YOUR-BACKEND-URL/analyze-screenshot",
+    {
+        method: "POST",
+        body: formData
+    }
+);
 
 } else {
 

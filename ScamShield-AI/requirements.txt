@@ -21,7 +21,7 @@ jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 MarkupSafe==3.0.3
 narwhals==2.26.0
-numpy==2.5.3
+numpy==2.2.6
 packaging==26.3
 pandas==3.0.6
 pillow==12.3.0
@@ -50,3 +50,4 @@ typing_extensions==4.16.0
 urllib3==2.8.0
 uvicorn==0.53.0
 websockets==16.1.1
+fastapi
