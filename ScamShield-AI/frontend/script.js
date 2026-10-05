@@ -43,7 +43,7 @@ if (screenshot) {
     formData.append("language", language);
 
     response = await fetch(
-    "https://YOUR-BACKEND-URL/analyze-screenshot",
+    "https://gdg-hackathon-1.onrender.com/analyze-screenshot",
     {
         method: "POST",
         body: formData
@@ -53,13 +53,13 @@ if (screenshot) {
 } else {
 
     response = await fetch(
-        "http://127.0.0.1:8000/analyze",
+        "https://gdg-hackathon-1.onrender.com/analyze",
         {
             method: "POST",
 
             headers: {
                 "Content-Type": "application/json"
-            },
+           },
 
             body: JSON.stringify({
                 message: message,
