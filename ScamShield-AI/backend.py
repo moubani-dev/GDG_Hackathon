@@ -11,6 +11,15 @@ app = FastAPI(
     version="1.0"
 )
 
+@app.get("/health")
+def health_check():
+    return {
+        "status": "ok",
+        "service": "ScamShield AI"
+    }
+    
+
+
 
 # Allow frontend to communicate with backend
 app.add_middleware(
@@ -46,25 +55,63 @@ def analyze(request: AnalyzeRequest):
             "error": "Please provide a message to analyze."
         }
 
-    result = analyze_message(
-        request.message,
-        request.language
-    )
+    try:
+        result = analyze_message(
+            request.message,
+            request.language
+        )
 
-    return result
+        return result
+
+    except Exception as e:
+        print(f"Gemini analysis error: {e}")
+
+        return {
+            "error": "AI analysis is temporarily unavailable. Please try again shortly."
+        }
 
 @app.post("/analyze-screenshot")
 async def analyze_screenshot_endpoint(
     file: UploadFile = File(...),
     language: str = Form("English")
 ):
+    # Check file type
+    allowed_types = ["image/png", "image/jpeg", "image/jpg"]
 
+    if file.content_type not in allowed_types:
+        return {
+            "error": "Please upload a PNG or JPEG image."
+        }
+
+    # Read file
     image_bytes = await file.read()
 
-    result = analyze_screenshot(
-        image_bytes,
-        file.content_type,
-        language
-    )
+    # Limit file size to 5 MB
+    max_size = 5 * 1024 * 1024
 
-    return result
+    if len(image_bytes) > max_size:
+        return {
+            "error": "Image is too large. Please upload an image smaller than 5 MB."
+        }
+
+    if not image_bytes:
+        return {
+            "error": "The uploaded image is empty."
+        }
+
+    # Analyze with Gemini
+    try:
+        result = analyze_screenshot(
+            image_bytes,
+            file.content_type,
+            language
+        )
+
+        return result
+
+    except Exception as e:
+        print(f"Gemini screenshot analysis error: {e}")
+
+        return {
+            "error": "AI screenshot analysis is temporarily unavailable. Please try again shortly."
+        }
